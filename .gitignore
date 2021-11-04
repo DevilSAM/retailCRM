@@ -2,6 +2,6 @@ node_modules/
 vendor/
 .env
 .idea/
-public/css/*
-public/js/*
-public/p.log
+/public/css/*
+/public/js/*
+/public/p.log

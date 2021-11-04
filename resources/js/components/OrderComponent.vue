@@ -88,6 +88,9 @@ export default {
           .then(response => {
               console.log(response)
               this.ordering = false
+              if (response.data.order_id) {
+                $('button').attr("disabled", "disabled");
+              }
           });
     }
 

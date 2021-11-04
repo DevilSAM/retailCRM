@@ -103,7 +103,7 @@ class PurchaseController extends BaseController
             exit(-1);
         }
 
-        return ['data' => $response->id];
+        return ['order_id' => $response->id];
 
     }
 

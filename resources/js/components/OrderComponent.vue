@@ -64,7 +64,6 @@ export default {
       let getFiltered = `https://superposuda.retailcrm.ru/api/v5/store/products/?apiKey=QlnRWTTWw9lv3kjxy1A8byjUmBQedYqb`;
       axios.post("/buy", {"brand": this.order.brand, "code": this.order.code})
           .then(response => {
-            console.log(response.data)
             this.ordering = false
             let prod_id = response.data.productId
             if (prod_id) {
@@ -87,7 +86,6 @@ export default {
           })
           .then(response => {
               this.ordering = false
-              console.log(response)
           });
     }
 

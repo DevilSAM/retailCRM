@@ -10,17 +10,8 @@ use Illuminate\Routing\Controller as BaseController;
 use RetailCrm\Api\Interfaces\ClientExceptionInterface;
 use RetailCrm\Api\Interfaces\ApiExceptionInterface;
 use RetailCrm\Api\Enum\CountryCodeIso3166;
-use RetailCrm\Api\Enum\Customers\CustomerType;
-use RetailCrm\Api\Factory\SimpleClientFactory;
-use RetailCrm\Api\Model\Entity\Orders\Delivery\OrderDeliveryAddress;
-use RetailCrm\Api\Model\Entity\Orders\Delivery\SerializedOrderDelivery;
-use RetailCrm\Api\Model\Entity\Orders\Items\Offer;
 use RetailCrm\Api\Model\Entity\Orders\Items\OrderProduct;
-use RetailCrm\Api\Model\Entity\Orders\Items\PriceType;
-use RetailCrm\Api\Model\Entity\Orders\Items\Unit;
 use RetailCrm\Api\Model\Entity\Orders\Order;
-use RetailCrm\Api\Model\Entity\Orders\Payment;
-use RetailCrm\Api\Model\Entity\Orders\SerializedRelationCustomer;
 use RetailCrm\Api\Model\Request\Orders\OrdersCreateRequest;
 
 class PurchaseController extends BaseController
@@ -100,13 +91,13 @@ class PurchaseController extends BaseController
         $order->patronymic      = $request->input('patronymic');
         $order->customerComment = $request->input('comment');
         $order->status          = 'trouble';
-        $order->marketplace->code = "test";
-        $order->marketplace->orderId = "7081984";
+
+        // $order->marketplace->code = "test";
+        // $order->marketplace->orderId = "7081984";
 
         $data->order = $order;
         try {
             $response = $client->orders->create($data);
-            p($response, 1);
         } catch (ApiExceptionInterface | ClientExceptionInterface $exception) {
             echo $exception; // Every ApiExceptionInterface instance should implement __toString() method.
             exit(-1);

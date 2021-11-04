@@ -2255,7 +2255,7 @@ __webpack_require__.r(__webpack_exports__);
         "brand": this.order.brand,
         "code": this.order.code
       }).then(function (response) {
-        console.log(response.data);
+        console.log(response);
         _this.ordering = false;
         var prod_id = response.data.productId;
 
@@ -2277,8 +2277,8 @@ __webpack_require__.r(__webpack_exports__);
         "patronymic": fio[2],
         "comment": this.order.comment
       }).then(function (response) {
-        _this2.ordering = false;
         console.log(response);
+        _this2.ordering = false;
       });
     }
   }

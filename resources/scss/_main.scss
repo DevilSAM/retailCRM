@@ -1,0 +1,16 @@
+body {
+    background-color:aquamarine;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.starred-text {
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
+.header-title {
+    background: linear-gradient(to right, aquamarine 0%, #fff 50%, aquamarine 100%);
+}

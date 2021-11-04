@@ -1,7 +1,8 @@
 node_modules/
 vendor/
+public/css/*
+public/js/*
+public/robots.txt
 .env
 .idea/
-/public/css/*
-/public/js/*
 /public/p.log

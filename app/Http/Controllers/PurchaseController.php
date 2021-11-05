@@ -11,6 +11,7 @@ use RetailCrm\Api\Interfaces\ClientExceptionInterface;
 use RetailCrm\Api\Interfaces\ApiExceptionInterface;
 use RetailCrm\Api\Enum\CountryCodeIso3166;
 use RetailCrm\Api\Model\Entity\Orders\Items\OrderProduct;
+use RetailCrm\Api\Model\Entity\Orders\MarketplaceData;
 use RetailCrm\Api\Model\Entity\Orders\Order;
 use RetailCrm\Api\Model\Request\Orders\OrdersCreateRequest;
 
@@ -92,8 +93,9 @@ class PurchaseController extends BaseController
         $order->customerComment = $request->input('comment');
         $order->status          = 'trouble';
 
-        // $order->marketplace->code = "test";
-        // $order->marketplace->orderId = "7081984";
+        $order->marketplace = new MarketplaceData();
+        $order->marketplace->code = "test";
+        $order->marketplace->orderId = "7081984";
 
         $data->order = $order;
         try {
